@@ -1,0 +1,120 @@
+/*Configurações*/
+    @font-face {
+        font-family: 'Pixellari';
+        src: url('Pixellari.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    :root {
+        --text-color-light: #ffffff;
+        --text-color-dark: #000000;
+        --background-color: #111010;
+        --accent-color: #252525;
+        --danger-color: #ff0000;
+        --here-color: #00c3ff;
+        --safe-color: #00ff00;
+        --accent-color-second: #5f5f5f;
+    }
+
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+/*Estilo*/
+    body{
+        margin: 0;
+        padding: 90px 0 0 0;
+        align-items: center;
+        justify-content: center; /* centraliza horizontalmente */
+        font-family: 'Pixellari';
+        background-color: var(--background-color);
+    }
+
+    /* Personaliza a barra de rolagem */
+        ::-webkit-scrollbar {width: 12px; background: var(--accent-color);}
+
+        ::-webkit-scrollbar-thumb {background: var(--text-color-light); border-radius: 1px;}
+
+        ::-webkit-scrollbar-track {background: var(--background-color);}
+
+    h1 {margin: 0; padding-top: 10px;}
+
+    #top {
+        position: fixed;
+        top: -1px; left: 0;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        color: var(--text-color-light);
+        font-size: 40px;
+        background-color: var(--accent-color);
+        box-shadow: 0 4px 16px var(--accent-color); /* sombra suave */
+        z-index: 1000; /* garante que fique acima dos outros elementos */
+        animation: fadeInDown 0.6s ease;
+    }
+    /*Corpo*/
+        .btns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* centraliza horizontalmente */
+            padding: 20px 0 0 0;
+        }
+
+        @media (min-width: 700px) {
+            .btns {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center; /* centraliza horizontalmente */
+                padding: 20px 240px 0 240px;
+            }
+
+        }
+
+        sec {
+            width: 170px;
+            height: 170px;
+            margin: 5px; /*Separação Botões*/
+            background-color: var(--text-color-light);
+            box-shadow: 0 4px 16px var(--accent-color); /* sombra suave */
+            color: var(--text-color-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* centraliza horizontalmente */
+            justify-content: center; /* centraliza verticalmente */
+            animation: fadeInDown 0.6s ease;
+        }
+
+        sec:hover {
+            background-color: var(--here-color);
+            color: var(--text-color-light);
+            box-shadow: 0 4px 16px var(--here-color); /* sombra suave */
+            transition: .2s ease;
+        }
+
+        #footer-bar {
+            width: 100%;
+            height: 40px;
+            background-image: url('fundo.png');
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: auto 40px;
+            margin-bottom: 0; /* garante que não há espaço extra */
+        }
+
+        #footer-content {
+            color: var(--text-color-light);
+            padding: 0;
+            display: grid;
+            background-color: var(--accent-color-second);
+            margin-top: 0; /* remove espaço acima */
+        }
+
